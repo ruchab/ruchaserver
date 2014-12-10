@@ -1,15 +1,12 @@
 {
-  "name": "nodeserver",
+  "name": "GumballLab",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node app.js"
   },
-  "main": "app.js",
   "dependencies": {
     "express": "3.2.6",
-    "ejs": "*",
-    "mongo-client": "0.2.1",
-    "mongodb": "1.4.23"
+    "ejs": "*"
   }
 }
