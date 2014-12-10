@@ -14,7 +14,7 @@ var app = express();
 
 // all environments
 app.set('port', process.env.PORT || 3000);
-app.set('ip', process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
+//app.set('ip', process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
 //app.set('port', process.env.PORT || 8080);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
@@ -36,5 +36,5 @@ app.get('/gumball/:id',restCall.getCall);
 app.put('/gumball/:id',restCall.putCall);
 
 http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port') + ' IP: ' + app.get('ip') );
+  console.log('Express server listening on port ' + app.get('port'));
 });
