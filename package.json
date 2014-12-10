@@ -9,6 +9,5 @@
   "dependencies": {
     "express": "3.2.6",
     "ejs": "*"
-    "node-rest-client": "^1.4.1"
   }
 }
