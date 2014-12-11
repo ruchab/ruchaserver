@@ -11,7 +11,10 @@ var express = require('express')
   , restCall=require('./routes/gumball');
 
 var app = express();
+var server = http.createServer(app);
 // all environments
+var server_port = process.env.PORT || 3000
+var server_ip_address = process.env.IP || '127.0.0.1'
 app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 3000);
 //app.set('ip', process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
 //app.set('port', process.env.PORT || 8080);
@@ -34,7 +37,10 @@ app.get('/users', user.list);
 app.get('/gumball/:id',restCall.getCall);
 app.put('/gumball/:id',restCall.putCall);
 
-
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
-});
+server.listen(server_port, server_ip_address, function(){
+	  console.log("Listening on " + server_ip_address + ", server_port " + server_port)
+	});
+	
+//http.createServer(app).listen(app.get('port'), function(){
+  //console.log('Express server listening on port ' + app.get('port'));
+//});
